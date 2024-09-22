@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game</title>
+</head>
+<body>
+    <h1>Click for a chance to win a prize!</h1> 
+    <p id="result"></p>
+    <button id="btn" onclick="PlayGame()">click to answer</button>
+    <script>
+        //h1 - header, p "result" - this element displays results and is effected by the function PlayGame(), button - generates two random numbers and adds them together.
+        function PlayGame() //function for adding two random numbers and comparing the answer with 150.
+        {
+           
+            let result;
+            const res1 = Math.floor(Math.random()*100)+1; //first random number (between 1-100)
+            const res2 = Math.floor(Math.random()*100)+1; //second random number (between 1-100)
+            res3 = res1 + res2; //adding res1 and res2, and putting that number into a uqnique variable named res3
+
+
+            console.log(res1); //these display res1-3 in my console so I can view them
+            console.log(res2); 
+            console.log(res3); 
+            
+        if (res3 == 150) //if random number equal to 150
+        {
+            result = "You win."; //output if statement is true
+        }
+        else //if random number not equal to 150
+        {
+            result = "You lose."; //output if the 'if' statemenet is false
+        }
+        document.getElementById("result").innerHTML= result; //adjusting element "result" based on result of adding two rand nums
+        }
+    </script>
+</body>
+</html>
